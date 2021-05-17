@@ -37,7 +37,6 @@ func worker(jobsChannel <- chan string, wg *sync.WaitGroup){
   defer wg.Done()
 
   for data := range jobsChannel{
-  //  variable := <- jobsChannel
     resp, err := http.Get(data)
     if err != nil{
       fmt.Println(err)
